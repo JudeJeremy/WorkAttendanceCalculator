@@ -53,7 +53,7 @@ const getWorkingDaysInMonth = (year, month) => {
   return workingDays;
 };
 
-export const MainPage = () => {
+const MainPage = () => {
   const [selectedDates, setSelectedDates] = useState([]);
   const [totalSelectedDays, setTotalSelectedDays] = useState(0);
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -107,7 +107,7 @@ export const MainPage = () => {
       </a>
       <div className="container">
         <h1 className="welcome-title">
-            Welcome to <em>OfficeHoursCalculator</em>
+          Welcome to <em>OfficeHoursCalculator</em>
         </h1>
         <main>
           <div className="logo">
@@ -131,6 +131,10 @@ export const MainPage = () => {
             left click to select office days and left click again to unselect
           </h5>
 
+          <h5 className="welcome-subtitle">
+            pink days are holidays
+          </h5>
+
           <div className="selected-info">
             <p>Total selected days: {totalSelectedDays}</p>
             <p>Working days in current month: {workingDaysInCurrentMonth}</p>
@@ -145,3 +149,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export default MainPage;

@@ -103,13 +103,13 @@ code {
 }
 
 .selected {
-  background-color: #90caf9;
-  color: white;
+  background-color: #90caf9 !important;
+  color: white !important;
 }
 
 .holiday {
-  background-color: #ffcccb;
-  color: white;
+  background-color: #ffcccb !important;
+  color: white !important; 
 }
 
 footer {
