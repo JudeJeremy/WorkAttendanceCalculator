@@ -98,7 +98,7 @@ const App = () => {
 
       <a
         className="button button-filled donate-button"
-        href="https://donate.stripe.com/test_7sIfZ58q18Gt9gs8wy"
+        href="https://donate.stripe.com/5kA3fZ8on9TK6bK144"
         target="_blank"
         rel="noreferrer noopener"
       >
