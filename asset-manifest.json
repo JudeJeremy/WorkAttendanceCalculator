@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/WorkAttendanceCalculator/static/css/main.c434637f.css",
+    "main.css": "/WorkAttendanceCalculator/static/css/main.af86fa6d.css",
     "main.js": "/WorkAttendanceCalculator/static/js/main.bcca24fa.js",
     "static/js/453.ed3810f9.chunk.js": "/WorkAttendanceCalculator/static/js/453.ed3810f9.chunk.js",
     "index.html": "/WorkAttendanceCalculator/index.html",
-    "main.c434637f.css.map": "/WorkAttendanceCalculator/static/css/main.c434637f.css.map",
+    "main.af86fa6d.css.map": "/WorkAttendanceCalculator/static/css/main.af86fa6d.css.map",
     "main.bcca24fa.js.map": "/WorkAttendanceCalculator/static/js/main.bcca24fa.js.map",
     "453.ed3810f9.chunk.js.map": "/WorkAttendanceCalculator/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c434637f.css",
+    "static/css/main.af86fa6d.css",
     "static/js/main.bcca24fa.js"
   ]
 }
