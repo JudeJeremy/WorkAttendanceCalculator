@@ -139,10 +139,12 @@ footer {
 .react-calendar__tile.selected {
   background-color: #90caf9 !important;
   color: white !important;
+  border-radius: 50%;
 }
 
 /* Style for public holidays */
 .react-calendar__tile.holiday {
   background-color: #f48fb1 !important;
   color: white !important;
+  border-radius: 50%;
 }
