@@ -129,6 +129,10 @@ const App = () => {
           <h5 className="welcome-subtitle">
             left click to select office days and left click again to unselect
           </h5>
+          <h5 className="welcome-subtitle">
+            pink days are public holidays!
+          </h5>
+
 
           <div className="selected-info">
             <p>Total selected days: {totalSelectedDays}</p>
