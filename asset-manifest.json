@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b92cdccd.css",
-    "main.js": "/static/js/main.ca672aa6.js",
-    "static/media/waspLogo.png": "/static/media/waspLogo.907ce25fbcaf409738f4.png",
-    "index.html": "/index.html",
-    "main.b92cdccd.css.map": "/static/css/main.b92cdccd.css.map",
-    "main.ca672aa6.js.map": "/static/js/main.ca672aa6.js.map"
+    "main.css": "/WorkAttendanceCalculator/static/css/main.b92cdccd.css",
+    "main.js": "/WorkAttendanceCalculator/static/js/main.fb9298dd.js",
+    "static/media/waspLogo.png": "/WorkAttendanceCalculator/static/media/waspLogo.907ce25fbcaf409738f4.png",
+    "index.html": "/WorkAttendanceCalculator/index.html",
+    "main.b92cdccd.css.map": "/WorkAttendanceCalculator/static/css/main.b92cdccd.css.map",
+    "main.fb9298dd.js.map": "/WorkAttendanceCalculator/static/js/main.fb9298dd.js.map"
   },
   "entrypoints": [
     "static/css/main.b92cdccd.css",
-    "static/js/main.ca672aa6.js"
+    "static/js/main.fb9298dd.js"
   ]
 }
