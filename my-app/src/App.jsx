@@ -118,7 +118,7 @@ const App = () => {
       </a>
       <div className="container">
         <h1 className="welcome-title">
-          Welcome to <em>OfficeHoursCalculator</em>
+          Welcome to <em>WorkDaysCalculator</em>
         </h1>
         <main>
           <div className="logo">
