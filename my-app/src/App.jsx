@@ -54,7 +54,8 @@ const getWorkingDaysInMonth = (year, month) => {
 
 const App = () => {
   const [selectedDates, setSelectedDates] = useState([]);
-  const [totalSelectedDays, setTotalSelectedDays] = useState(0);
+  const [leaveDates, setLeaveDates] = useState([]);
+  const [isSelectingLeave, setIsSelectingLeave] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
   const handleDateClick = (date) => {
@@ -64,26 +65,37 @@ const App = () => {
 
     const dateString = date.toDateString();
     const isDateSelected = selectedDates.some(selectedDate => selectedDate.toDateString() === dateString);
+    const isLeaveDateSelected = leaveDates.some(leaveDate => leaveDate.toDateString() === dateString);
 
-    if (isDateSelected) {
-      // Date already selected, remove it
-      setSelectedDates(prevDates => prevDates.filter(selectedDate => selectedDate.toDateString() !== dateString));
+    if (isSelectingLeave) {
+      if (isLeaveDateSelected) {
+        setLeaveDates(prevDates => prevDates.filter(leaveDate => leaveDate.toDateString() !== dateString));
+      } else {
+        setLeaveDates(prevDates => [...prevDates, date]);
+        if (isDateSelected) {
+          setSelectedDates(prevDates => prevDates.filter(selectedDate => selectedDate.toDateString() !== dateString));
+        }
+      }
     } else {
-      // Add new date
-      setSelectedDates(prevDates => [...prevDates, date]);
+      if (isDateSelected) {
+        setSelectedDates(prevDates => prevDates.filter(selectedDate => selectedDate.toDateString() !== dateString));
+      } else {
+        setSelectedDates(prevDates => [...prevDates, date]);
+        if (isLeaveDateSelected) {
+          setLeaveDates(prevDates => prevDates.filter(leaveDate => leaveDate.toDateString() !== dateString));
+        }
+      }
     }
   };
-
-  useEffect(() => {
-    setTotalSelectedDays(selectedDates.length);
-  }, [selectedDates]);
 
   const handleActiveStartDateChange = ({ activeStartDate }) => {
     setCurrentMonth(activeStartDate);
   };
 
   const workingDaysInCurrentMonth = getWorkingDaysInMonth(currentMonth.getFullYear(), currentMonth.getMonth());
-  const AttendencePercentage = (totalSelectedDays / workingDaysInCurrentMonth * 100).toFixed(2);
+  const totalLeaveDays = leaveDates.length;
+  const effectiveWorkingDays = workingDaysInCurrentMonth - totalLeaveDays;
+  const AttendencePercentage = (selectedDates.length / effectiveWorkingDays * 100).toFixed(2);
 
   return (
     <div className="app">
@@ -106,7 +118,7 @@ const App = () => {
       </a>
       <div className="container">
         <h1 className="welcome-title">
-            Welcome to <em>OfficeHoursCalculator</em>
+          Welcome to <em>OfficeHoursCalculator</em>
         </h1>
         <main>
           <div className="logo">
@@ -121,10 +133,20 @@ const App = () => {
                 if (isPublicHoliday(date)) {
                   return 'holiday'; // Apply holiday styling
                 }
+                if (leaveDates.some(leaveDate => leaveDate.toDateString() === date.toDateString())) {
+                  return 'leave-day'; // Apply leave day styling
+                }
                 return selectedDates.some(selectedDate => selectedDate.toDateString() === date.toDateString()) ? 'selected' : null;
               }}
             />
           </div>
+
+          <button
+            className={`toggle-leave-mode ${isSelectingLeave ? 'active' : ''}`}
+            onClick={() => setIsSelectingLeave(!isSelectingLeave)}
+          >
+            {isSelectingLeave ? 'Select Office Days' : 'Select Leave Days'}
+          </button>
 
           <h5 className="welcome-subtitle">
             left click to select office days and left click again to unselect
@@ -133,9 +155,9 @@ const App = () => {
             pink days are public holidays!
           </h5>
 
-
           <div className="selected-info">
-            <p>Total selected days: {totalSelectedDays}</p>
+            <p>Total selected days: {selectedDates.length}</p>
+            <p>Leave days: {totalLeaveDays}</p>
             <p>Working days in current month: {workingDaysInCurrentMonth}</p>
             <p>Attendance Percentage: {AttendencePercentage}%</p>
           </div>
@@ -150,4 +172,3 @@ const App = () => {
 };
 
 export default App;
-

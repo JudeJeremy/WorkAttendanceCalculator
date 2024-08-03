@@ -136,15 +136,32 @@ footer {
   z-index: 2;
 }
 
+/* Specific styles for selected dates */
 .react-calendar__tile.selected {
-  background-color: #90caf9 !important;
-  color: white !important;
-  border-radius: 50%;
+  background-color: #90caf9;
+  color: white;
 }
 
-/* Style for public holidays */
+/* Specific styles for public holidays */
 .react-calendar__tile.holiday {
-  background-color: #f48fb1 !important;
-  color: white !important;
-  border-radius: 50%;
+  background-color: #f48fb1;
+  color: white;
+}
+
+/* Specific styles for leave days */
+.react-calendar__tile.leave-day {
+  background-color: #ffcc80;
+  color: white;
+}
+
+.toggle-leave-mode {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toggle-leave-mode.active {
+  background-color: #ffa726;
+  color: white;
 }
