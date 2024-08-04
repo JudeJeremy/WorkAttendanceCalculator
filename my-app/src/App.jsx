@@ -116,6 +116,7 @@ const App = () => {
       >
         Donate!
       </a>
+      
       <div className="container">
         <h1 className="welcome-title">
           Welcome to <em>WorkDaysCalculator</em>
@@ -165,6 +166,7 @@ const App = () => {
 
         <footer>
           <p>&copy; 2024 WorkAttendanceCalculator. All rights reserved.</p>
+          
         </footer>
       </div>
     </div>
