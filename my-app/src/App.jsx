@@ -150,10 +150,10 @@ const App = () => {
           </button>
 
           <h5 className="welcome-subtitle">
-            left click to select office days and left click again to unselect
+            Left click to select office days and left click again to unselect
           </h5>
           <h5 className="welcome-subtitle">
-            pink days are public holidays!
+            Pink days are public holidays!
           </h5>
 
           <div className="selected-info">
