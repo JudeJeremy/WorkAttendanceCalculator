@@ -119,7 +119,7 @@ const App = () => {
       
       <div className="container">
         <h1 className="welcome-title">
-          Welcome to <em>WorkDaysCalculator</em>
+          Welcome to <em>WorkAttendanceCalc</em>
         </h1>
         <main>
           <div className="logo">
@@ -165,7 +165,7 @@ const App = () => {
         </main>
 
         <footer>
-          <p>&copy; 2024 WorkAttendanceCalculator. All rights reserved.</p>
+          <p>&copy; 2024 WorkAttendanceCalc. All rights reserved.</p>
           
         </footer>
       </div>
